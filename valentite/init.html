@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For my lover</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+
+            background-image: url(baba.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+          display: inline-block;
+          border: 2px solid #000000;
+          margin: 10px;
+          margin-right: 160px;
+          padding: 10px 20px;
+          border-radius: 20px;
+          background-color: #fdc9ce;
+          cursor: pointer;
+        }
+
+        .moving-button {
+            position: absolute;
+            margin-left: 310px
+        }
+
+    </style>
+    <script>
+        function moveButton() {
+            var button = document.getElementById("movingButton");
+            var randomX = Math.floor(Math.random() * screen.width);
+            var randomY = Math.floor(Math.random() * screen.height);
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Will you be my Valentine?</h1>
+        <div class="button-container">
+            <button class="button" onclick="nextPage()">Yes</button>
+            <button class="button moving-button" onclick="moveButton()" id="movingButton">No</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "scary.html";
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
